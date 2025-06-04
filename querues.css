@@ -132,9 +132,15 @@
     left: 0;
     width: 100%;
     height: 100vh;
+    transform: translate(100%);
     display: flex;
     justify-content: center;
     align-items: center;
+    opacity: 0;
+    transition: all 0.5s;
+    opacity: 0;
+    pointer-events: none;
+    visibility: hidden;
   }
   .main-nav-list {
     flex-direction: column;
@@ -143,5 +149,16 @@
   .main-nav-link:link,
   .main-nav-link:visited {
     font-size: 3rem;
+  }
+  .nav-open .main-nav {
+    opacity: 1;
+    pointer-events: auto;
+    visibility: visible;
+  }
+  .nav-open .icon-mobile-nav[name="close-outline"] {
+    display: block;
+  }
+  .nav-open .icon-mobile-nav[name="menu-outline"] {
+    display: none;
   }
 }
